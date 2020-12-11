@@ -1,0 +1,213 @@
+body{
+    margin: 0;
+}
+#grid{
+    background-color: #f0f5f9;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:50px 1fr 30px;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+}
+
+
+header{
+    background:#1e2022;
+    grid-area: header;
+}
+nav{
+    /* background:#065c6f; */
+}
+
+
+
+#main{
+    grid-area: content;
+    min-height: 3000px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh 100vh 100vh 100vh;
+    grid-template-areas:
+    "image"
+     "content1"
+     "content2"
+     "content3";
+     justify-items:center;
+
+}
+#image-div{
+    grid-area:image;
+    background:url("img/homePicture.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center center;
+    width:100%;
+    /* background: linear-gradient(to right,hsla(204,13%,37%,1),hsla(204,13%,37%,.8),hsla(204,13%,37%,0)); */
+
+}
+.overlay{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:hsla(210,6%,13%,0.8);
+    width: 100%;
+    height: 100%;
+}
+
+.overlay > .inner{
+    width: 60%;
+    flex-shrink:1;
+    margin-top:15%;
+    margin-left:-15%;
+
+}
+.inner > h2{
+    color:#f0f5f9;
+    font-family:Montserrat;
+    font-size:72px;
+    margin:0px;
+
+}
+.inner > p{
+    color:#c9d6df;
+    font-family:Montserrat;
+    font-size:20px;
+}
+
+h3{
+    color:#f0406c;
+    font-family:Montserrat;
+    margin:5px;
+    font-size:22px;
+}
+
+.content1{
+    width:90%;
+    display: flex;
+
+    grid-area:content1;
+    margin-top: 5%;
+
+}
+.writeContent {
+    background:clear;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+.flippedontent{
+    align-items:flex-end;
+}
+.image-background{
+    background: url("img/barcelona maradona.jpg");
+
+    background-repeat: space;
+    background-size:cover;
+    background-position: center;
+    flex:2;
+}
+
+.content2{
+    width:90%;
+    display: flex;
+    grid-area:content2;
+    margin-top: 5%;
+
+}
+.content2 > .image-background{
+    background: url("img/napoli maradona.jpg ");
+    order:-1;
+    background-repeat: space;
+    background-size:cover;
+    background-position: center;
+    }
+.content3{
+    width:90%;
+    display: flex;
+    grid-area:content3;
+    margin-top: 5%;
+
+}
+.content3 > .image-background{
+    background: url("img/manager manager.jpg");
+
+    background-repeat: space;
+    background-size:cover;
+    background-position: center;
+    }
+.writeContent > h2{
+    color:#1e2022;
+    font-family:Montserrat;
+    font-size:52px;
+    margin:30% 0 5px 0;
+}
+.writeContent > h3{
+
+    color:#52616b;
+    font-family:Montserrat;
+    margin:0 0 5px 0;
+    font-size:22px;
+
+}
+.writeContent > p{
+    color:#52616b;
+    font-family:Montserrat;
+    font-size:20px;
+    margin: auto 50px 20% 0;
+    justify-content:flex-end;
+}
+
+.flippedontent > h2{
+    text-align: right;
+    width:100%;
+    margin:30% 0 5px 0;
+}
+.flippedontent > h3{
+    text-align: right;
+    width:100%;
+    margin:0 0 5px 0;
+
+}
+.flippedontent > p{
+
+    margin: auto 0 20% 50px;
+    justify-content:flex-end;
+}
+
+th{
+    text-align: left;
+}
+td{
+    text-align:right;
+}
+footer{
+    background :#1e2022 ;
+    grid-area: footer;
+}
+
+
+@media screen and (max-width:900px) {
+    .content{
+        flex-direction: column;
+
+    }
+    .content2 > .image-background{
+        order:1;
+    }
+    .writeContent > p{
+        text-align: justify;
+        margin: auto 0px 5% 0;
+    }
+    .writeContent > h2{
+        text-align: center;
+        margin: 5% 0px 5% 0;
+    }
+    .writeContent > h3{
+
+        text-align: center;
+    }
+}
